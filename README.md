@@ -101,6 +101,54 @@ run_as_user="nexus"
   
  $ service nexus status
   
+ ### Now login to nexus server 
+  https://<Public ip:8081>
+  
+ ## Now create a Repository in Nexus
+  
+  *** Create repo ---> maven2hosted
+  
+  Name : Demoapp-release
+  
+  Version : release
+  
+  & everything is default
+  
+  create repositry ***
+  
+  
+ ## Now configure in Jenkins
+  
+  Install a plugin called "NexusArtifactUploader"
+  
+  ### Now create jenkins pipeline job
+  
+  Go to snipper generator
+  
+  Select  nexusArtifactUploader:NexusArtifactUploader
+  
+  And give details as i mentioned below
+  
+  ```Nexus Version Nexus3
+     Protocol: HTTP
+     Nexus url : <private ip:8081>
+     credentials : <Nexus credentials>
+     GroupId : in.javahome    -------> you can found this in pom.xml file
+     Version : 1.0.0
+     Repositry : demoapp-release   ------> Which you created in nexus
+     Add (Select)
+  
+     Artifacts
+        ArtifactId : simpleapp  (From pom file)
+        Type : war
+        Classifier : Not required
+        File : target/simple-app-1.0.0.war'''
+  
+  
+  
+  
+  
+  
  
 
 
