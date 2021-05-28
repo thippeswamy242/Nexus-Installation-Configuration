@@ -142,7 +142,12 @@ run_as_user="nexus"
         ArtifactId : simpleapp  (From pom file)
         Type : war
         Classifier : Not required
-        File : target/simple-app-1.0.0.war'''
+        File : target/simple-app-1.0.0.war
+  ```
+  
+ Generate script copy the code and paste it in the stage of Jenkins file to upload artifact to nexs server
+  
+  ####And build your pipeline job
   
   
   
