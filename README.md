@@ -27,5 +27,16 @@ We recommend increasing the available file handles2 for Nexus preemptively to av
 ## Java
 Sonatype Nexus is a Java server application that requires specific versions to operate.
 
-----|-----
----NexusVersion---|---Supported Sun/Oracle/OpenJDK JRE version---
+Nexus Version 2.14.11+   onwards you can use The most recent version of Java 8 available.This version and after will no longer boot on Java 7.
+
+Note : We strongly suggest using the latest compatible release version of Java available.
+
+## CPU
+Nexus Repository Manager performance is primarily bounded by IO (disk and network) rather than CPU.  So any reasonably modern 2-4 core CPU will generally be sufficient for normal use.
+## Memory
+The default JRE max heap size of Nexus Professional is 768Mb, and the codebase of Nexus Repository Manager will consume approximately another 1GB.  So factoring in operating system overhead you will need at least 4GB of RAM, assuming no other large applications are running on the machine.For very large Nexus Repository Manager instances you will need to bump up the maximum heap space. If you do this you should increase RAM on the system accordingly.
+## Disk
+Sonatype Nexus, installed, consumes less than 100MB. The bulk of disk space will be held by your deployed and proxied artifacts, as well as any search indexes. This is highly installation specific.
+
+
+
