@@ -147,6 +147,29 @@ run_as_user="nexus"
   
  Generate script copy the code and paste it in the stage of Jenkins file to upload artifact to nexs server
   
+  ### Jenkinsfile
+  
+  ```stage('Upload war to Nexus') {
+      steps {
+        nexusArtifactUploader artifacts: [
+            [
+              artifactId: 'simple-app',
+              classifier: '',
+              file: 'target/simple-app-1.0.0.war',
+              type: 'war'
+            ]
+          ],
+          credentialsId: 'nexus3',
+          groupId: 'in.javahome',
+          nexusurl: '172.21.14.301:8081',
+          nexusVersion: 'nexus3'
+        protocol: 'http',
+          repositry: 'demoapp-release',
+          version: '1.0.0'
+      }
+    }
+  ```
+  
  #### And build your pipeline job
   
 ### Note: In above generated script the Versions are hardcoded. If we need to change version in pom.xml file again we need to go Jenkinsfile and there also we need to change version to reflect it. To overcome this we are following one more method in below steps.
@@ -157,6 +180,31 @@ run_as_user="nexus"
 ##### In order to dynamically read versions from pom.xml. We need to install Plugin called "PipelineUtilitySteps"
   
  In google search Jenkins read pom version and select pipeline utility steps and select readMavenPom.
+  
+  ```stage('Upload war to Nexus') {
+      steps {
+        script {
+          def mavenPom = readMavenPom file: 'pom.xml'
+          nexusArtifactUploader artifacts: [
+              [
+                artifactId: 'simple-app',
+                classifier: '',
+                file: "target/simple-app-${mavenPom.version}.war",
+                type: 'war'
+              ]
+            ],
+            credentialsId: 'nexus3',
+            groupId: 'in.javahome',
+            nexusurl: '172.21.14.301:8081',
+            nexusVersion: 'nexus3'
+          protocol: 'http',
+            repositry: 'demoapp-release',
+            version: "${mavenPom.version}"
+
+        }
+
+      }
+  ```
   
   
   
