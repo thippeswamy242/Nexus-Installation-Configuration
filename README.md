@@ -149,7 +149,8 @@ run_as_user="nexus"
   
   ### Jenkinsfile
   
-  ```stage('Upload war to Nexus') {
+  ```
+  stage('Upload war to Nexus') {
       steps {
         nexusArtifactUploader artifacts: [
             [
@@ -183,7 +184,8 @@ run_as_user="nexus"
   
   ###
   
-  ```stage('Upload war to Nexus') {
+  ```
+  stage('Upload war to Nexus') {
       steps {
         script {
           def mavenPom = readMavenPom file: 'pom.xml'
