@@ -67,10 +67,45 @@ $ sudo mv <package name> nexus3
 ***Change owner ship of the file***
   
 $ sudo useradd nexus
+  
 $ sudo chown -R nexus:nexus nexus3/ sonatype-work/
+  
 $ ls -ltr
+  
+### Run Nexus as a service
+  
+It requires when you boot up your system it automatically start the nexus service if we run as a service.  
 
-###How to run nexus as a service
+***Go to Nexus official website you will find the steps to configure***
+https://help.sonatype.com/repomanager3/installation/run-as-a-service
+ 
+$ cd /opt/nexus3/bin
+  
+***Step 1***
+  
+$ sudo vim nexus.rc
+  
+run_as_user="nexus"
+
+***Step 2***
+  
+ Create a soft link
+  
+ $ sudo ln -s /opt/nexus3/bin/nexus /etc/init.d/nexus
+  
+ $ cd /etc/init.d
+ $ sudo chkconfig --add nexus
+ $ sudo chkconfig --level 345 nexus on
+  
+ $ service nexus start
+  
+ $ service nexus status
+  
+ 
+
+
+  
+
 
 
 
