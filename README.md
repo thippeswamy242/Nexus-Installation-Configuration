@@ -51,6 +51,24 @@ $ sudo java --version
 ***Download Nexus from official website***
 https://help.sonatype.com/repomanager3/download
 
+***Go to /opt directory and download nexus package from official website***
+
+$ cd /opt
+$ sudo wget https://download.sonatype.com/nexus/3/latest-unix.tar.gz
+
+***Extract tar file
+
+$ sudo tar -xzf <name of package>
+
+***Rename Nexus***
+$ sudo mv <package name> nexus3
+
+***Change***
+
+
+
+
+
 
 
 
