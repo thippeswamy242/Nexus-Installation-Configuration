@@ -147,7 +147,7 @@ run_as_user="nexus"
   
  Generate script copy the code and paste it in the stage of Jenkins file to upload artifact to nexs server
   
-  ####And build your pipeline job
+  #### And build your pipeline job
   
   
   
