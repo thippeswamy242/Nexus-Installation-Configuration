@@ -147,7 +147,7 @@ run_as_user="nexus"
   
  Generate script copy the code and paste it in the stage of Jenkins file to upload artifact to nexs server
   
- *** Note: In above generated script the Versions are hardcoded. If we need to change version in pom.xml file again we need to go Jenkinsfile and there also we need to change version to reflect it. To overcome this we are following one more method in below steps. 
+ *** Note: In above generated script the Versions are hardcoded. If we need to change version in pom.xml file again we need to go Jenkinsfile and there also we need to change version to reflect it. To overcome this we are following one more method in below steps. ***
   
   #### And build your pipeline job
   
