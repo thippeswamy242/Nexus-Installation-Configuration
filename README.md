@@ -39,4 +39,22 @@ The default JRE max heap size of Nexus Professional is 768Mb, and the codebase o
 Sonatype Nexus, installed, consumes less than 100MB. The bulk of disk space will be held by your deployed and proxied artifacts, as well as any search indexes. This is highly installation specific.
 
 
+# Installation steps for Redhat with t2.medium instance
+
+### Install Java
+$ sudo yum list | grep java-1.8
+$ sudo yum install java-1.8.0-openjdk -y
+$ sudo java --version
+
+### Install Nexus
+
+***Download Nexus from official website***
+https://help.sonatype.com/repomanager3/download
+
+
+
+
+
+
+
 
